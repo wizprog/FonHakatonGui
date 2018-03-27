@@ -1,0 +1,21 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.text-field {
+   -fx-text-fill: white;
+}
+
+.password-field{
+    -fx-text-fill: white;
+}
+
+
+.text-field:empty .text {
+    -fx-effect: null ;
+}
+
+.button:pressed{
+	-fx-background-color: red;
+}
+
+.button:hover{
+	-fx-background-color: #693221;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2d0000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+	<children>
+		<ImageView fitHeight="500.0" fitWidth="800.0" onDragEntered="#onMouseEntered" opacity="0.3" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<image>
+				<Image url="@../picture/matrix_wallpaper_by_quizz25s-d4pbdph.png" />
+			</image>
+		</ImageView>
+		<AnchorPane layoutX="483.0" layoutY="93.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="313.0" prefWidth="250.0" style="-fx-background-color: #830000;" stylesheets="@application.css" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+			<children>
+				<TextField fx:id="username" focusTraversable="false" layoutX="30.0" layoutY="110.0" opacity="0.6" promptText="username" style="-fx-background-color: #b91111;" stylesheets="@application.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+				<PasswordField focusTraversable="false" layoutX="31.0" layoutY="157.0" opacity="0.5" promptText="password" style="-fx-background-color: #b91111;" stylesheets="@application.css" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="29.0" />
+				<Button layoutX="66.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleButtonAction" opacity="0.55" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #111111;" stylesheets="@application.css" text="Sign In" textFill="WHITE" />
+				<Label layoutX="97.0" layoutY="25.0" text="Sign In" textFill="#c6c6c6">
+					<font>
+						<Font name="SansSerif Regular" size="18.0" />
+					</font>
+				</Label>
+				<Hyperlink layoutX="74.0" layoutY="264.0" text="Forgot password?" textFill="#868686" underline="true" />
+			</children>
+		</AnchorPane>
+		<Label layoutX="75.0" layoutY="166.0" text="Welcome to our application" textFill="#d0d0d0">
+			<font>
+				<Font name="SansSerif Regular" size="32.0" />
+			</font>
+		</Label>
+		<Label layoutX="154.0" layoutY="233.0" text="Register free and try various opportunities &#10;               our app is giving to you&#10;" textFill="#b5b5b5" />
+		<Button layoutX="190.0" layoutY="305.0" mnemonicParsing="false" opacity="0.8" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #b21111;" text="Sign Up" textFill="#b5b5b5" />
+		<Label fx:id="label" layoutX="25.0" layoutY="463.0" onDragEntered="#onMouseEntered" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" stylesheets="@application.css" text="Close" textFill="#909090" />
+	</children>
+</AnchorPane>
