@@ -67,7 +67,7 @@ public class Controller implements EventHandler<ActionEvent>{
 			logIn.show();
         }
 		
-		
+	//	dat.queryCreateAcc("cipikao", "volimkacu996");
 		dat.closeConnection();
 	}
 

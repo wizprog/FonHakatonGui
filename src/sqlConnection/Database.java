@@ -15,12 +15,13 @@ public class Database {
     private static String password = "Vodavoda123";
     private static String url = String.format("jdbc:sqlserver://%s:1433;database=%s;user=%s;password=%s;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;", hostName, dbName, user, password);
     private Connection connection = null;
-    
+    private static AdvancedEncryptionStandard aes = null;
     public Database() { 	
     	try {
     		connection = DriverManager.getConnection(url);
     		String schema = connection.getSchema();
     		System.out.println("Successful connection - Schema: " + schema);
+    		aes = new AdvancedEncryptionStandard();
         	}
          catch (Exception e) {
              e.printStackTrace();
@@ -56,8 +57,20 @@ public class Database {
        	  catch (Exception e) {
                  e.printStackTrace();
                  return null;
-              }  
+              }  	
+    	}
+    	
+    	public boolean queryCreateAcc(String user, String pass) {
     		
+    		String aesUser = aes.cipherText(user);
+    		String aesPass = aes.cipherText(pass);
+    		try (Statement statement = connection.createStatement()) {	
+    			return statement.execute(String.format("INSERT INTO UserLogin(Username,Password) VALUES('%s','%s')", aesUser, aesPass));
+                }       	 
+       	  catch (Exception e) {
+                 e.printStackTrace();
+                 return false;
+              }  
     	}
     
     public void closeConnection() { 
