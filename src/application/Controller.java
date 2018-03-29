@@ -1,6 +1,7 @@
 package application;
 
 import java.util.concurrent.TimeUnit;
+import sqlConnection.*;
 
 import javafx.animation.FadeTransition;
 import javafx.event.*;
@@ -25,6 +26,9 @@ public class Controller implements EventHandler<ActionEvent>{
 	private TextField username;
 	
 	@FXML
+	private PasswordField password;
+	
+	@FXML
 	private Label label;
 
 	@FXML
@@ -44,6 +48,13 @@ public class Controller implements EventHandler<ActionEvent>{
 	
 	@FXML
 	private void handleButtonAction(ActionEvent event) throws Exception {
+		String us = username.getText();
+		String pa = password.getText();
+		
+		Database dat = new Database();
+		
+		String sqlStatment = "SELECT * FROM UserLogin WHERE ";
+		
 		Parent signInPage = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
 		Scene signInScene = new Scene(signInPage);
 		Stage logIn = (Stage)((Node)event.getSource()).getScene().getWindow();

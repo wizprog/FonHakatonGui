@@ -20,7 +20,7 @@
 		<AnchorPane layoutX="483.0" layoutY="93.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="313.0" prefWidth="250.0" style="-fx-background-color: #830000;" stylesheets="@application.css" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
 			<children>
 				<TextField fx:id="username" focusTraversable="false" layoutX="30.0" layoutY="110.0" opacity="0.6" promptText="username" style="-fx-background-color: #b91111;" stylesheets="@application.css" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
-				<PasswordField focusTraversable="false" layoutX="31.0" layoutY="157.0" opacity="0.5" promptText="password" style="-fx-background-color: #b91111;" stylesheets="@application.css" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="29.0" />
+				<PasswordField fx:id="password" focusTraversable="false" layoutX="31.0" layoutY="157.0" opacity="0.5" promptText="password" style="-fx-background-color: #b91111;" stylesheets="@application.css" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="29.0" />
 				<Button layoutX="66.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleButtonAction" opacity="0.55" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #111111;" stylesheets="@application.css" text="Sign In" textFill="WHITE" />
 				<Label layoutX="97.0" layoutY="25.0" text="Sign In" textFill="#c6c6c6">
 					<font>
