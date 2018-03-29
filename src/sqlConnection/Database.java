@@ -27,9 +27,14 @@ public class Database {
           }  	   	
      }
        
-    public ResultSet queryMe(String selectSql) {
+  /*  public ResultSet queryMe(String selectSql) {
     	 try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(selectSql)) {
+    			while (resultSet.next())
+    	        {
+    	            System.out.println(resultSet.getString(1) + " "
+    	                + resultSet.getString(2));
+    	        }
               return resultSet;
              }       	 
     	  catch (Exception e) {
@@ -37,6 +42,23 @@ public class Database {
               return null;
            }  	    	 
     }
+    */ 
+    
+    	public User queryLog(String user, String pass) {
+    		try (Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery(String.format("SELECT * FROM UserLogin WHERE CONVERT(VARCHAR, Username)='%s' AND CONVERT(VARCHAR, Password)='%s'", user, pass))) {
+       			while (resultSet.next())
+       	        {
+       	           return new User(resultSet.getString(1),resultSet.getString(2));
+       	        }
+                 return null;
+                }       	 
+       	  catch (Exception e) {
+                 e.printStackTrace();
+                 return null;
+              }  
+    		
+    	}
     
     public void closeConnection() { 
     	try {

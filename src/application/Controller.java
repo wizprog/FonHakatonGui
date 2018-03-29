@@ -1,5 +1,11 @@
 package application;
 
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.DriverManager;
 import java.util.concurrent.TimeUnit;
 import sqlConnection.*;
 
@@ -48,18 +54,21 @@ public class Controller implements EventHandler<ActionEvent>{
 	
 	@FXML
 	private void handleButtonAction(ActionEvent event) throws Exception {
-		String us = username.getText();
-		String pa = password.getText();
 		
-		Database dat = new Database();
+        Database dat = new Database();
+        
+        User current = dat.queryLog(username.getText(), password.getText());
 		
-		String sqlStatment = "SELECT * FROM UserLogin WHERE ";
+        if (current != null) {
+			Parent signInPage = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
+			Scene signInScene = new Scene(signInPage);
+			Stage logIn = (Stage)((Node)event.getSource()).getScene().getWindow();
+			logIn.setScene(signInScene);
+			logIn.show();
+        }
 		
-		Parent signInPage = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-		Scene signInScene = new Scene(signInPage);
-		Stage logIn = (Stage)((Node)event.getSource()).getScene().getWindow();
-		logIn.setScene(signInScene);
-		logIn.show();
+		
+		dat.closeConnection();
 	}
 
 	@Override
