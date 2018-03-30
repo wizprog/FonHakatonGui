@@ -1,21 +1,14 @@
 package application;
 
-import java.io.IOException;
-
-import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Duration;
 
 public class LogIn extends Application {
 
@@ -50,6 +43,7 @@ public class LogIn extends Application {
 		Scene scene = new Scene(root, 800, 500);
 
 		primaryStage.initStyle(StageStyle.UNDECORATED);
+		primaryStage.getIcons().add(new Image(LogIn.class.getResourceAsStream("../picture/BATN.png")));
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);
 		primaryStage.show();

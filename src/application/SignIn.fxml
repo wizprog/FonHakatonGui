@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLSignInController">
    <children>
-      <Label layoutX="146.0" layoutY="142.0" text="Nes dobit picke.com" />
-      <Label layoutX="122.0" layoutY="219.0" text="Isto nes dobit, samo crvenom" textFill="RED" />
+      <Circle fill="#ee1102" layoutX="378.0" layoutY="22.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
    </children>
 </AnchorPane>
