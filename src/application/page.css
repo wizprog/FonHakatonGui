@@ -2,10 +2,15 @@
 	-fx-background-color: transparent;
 	-fx-background-radius: 0px;
 	-fx-border-color: red;
-	-fx-border-width: 0px 0px 0px 4px;
+	-fx-border-width: 0px 0px 0px 7px;
 	-fx-border-style: solid;
 }
 
 .button{
 	-fx-background-color: transparent;
+}
+
+.roundlabel{
+	-fx-background-color: red;
+	-fx-background-radius: 100%;
 }

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
@@ -10,29 +15,60 @@
    <children>
       <Pane layoutX="6.0" layoutY="124.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3f3b3c;" stylesheets="@page.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="homeBtn" layoutX="15.0" layoutY="103.0" mnemonicParsing="false" onAction="#sceneActionHome" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Home" textFill="WHITE">
+            <Button fx:id="homeBtn" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="103.0" mnemonicParsing="false" onAction="#sceneActionHome" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Home" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="15.0" layoutY="163.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online placanje" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online placanje" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="15.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Popularni paketi" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Popularni paketi" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="15.0" layoutY="283.0" mnemonicParsing="false" onAction="#sceneActionPromotions" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promocije" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="283.0" mnemonicParsing="false" onAction="#sceneActionPromotions" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promocije" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Button>
+             <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="343.0" mnemonicParsing="false" onAction="#sceneActionGo" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="mtsExplore" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
             <Circle fill="#ee1102" layoutX="23.0" layoutY="553.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" />
+            <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../picture/not.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label" alignment="CENTER" focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="17.0" prefWidth="16.0" styleClass="roundlabel" stylesheets="@page.css" textFill="WHITE" />
          </children>
       </Pane>
-      <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="109.0" layoutY="87.0" text="Dobrodošli">
+               <font>
+                  <Font name="SansSerif Bold" size="51.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.1619047619047619" startY="0.36666666666666664">
+                     <stops>
+                        <Stop color="#ff6060" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="176.0" fitWidth="251.0" layoutX="539.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../picture/Telekom_logo.png" />
+               </image>
+            </ImageView>
+         </children></Pane>	
    </children>
 </AnchorPane>
