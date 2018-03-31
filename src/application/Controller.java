@@ -51,20 +51,20 @@ public class Controller implements EventHandler<ActionEvent>{
 
 	@FXML
 	private void handleButtonActionLogIn(ActionEvent event) throws Exception {
-		 Database dat = new Database();
+		// Database dat = new Database();
 	        
-	        User current = dat.queryLog(username.getText(), password.getText());
+	     //   User current = dat.queryLog(username.getText(), password.getText());
 			
 	     
 				Parent signInPage = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
 				Scene signInScene = new Scene(signInPage);
 				Stage logIn = (Stage)((Node)event.getSource()).getScene().getWindow();
 				logIn.setScene(signInScene);
-				   if (current != null) {
+				 //  if (current != null) {
 					   logIn.show();
-				   }
+				//   }
 
-			dat.closeConnection();
+			//dat.closeConnection();
 			
 		signInPage.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override

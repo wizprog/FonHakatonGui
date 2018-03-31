@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLSignInController">
+<AnchorPane prefHeight="580.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLSignInController">
    <children>
-      <Circle fill="#ee1102" layoutX="378.0" layoutY="22.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <Pane layoutX="6.0" layoutY="124.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3f3b3c;" stylesheets="@page.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="homeBtn" layoutX="15.0" layoutY="103.0" mnemonicParsing="false" onAction="#sceneActionHome" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="163.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online placanje" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Popularni paketi" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="283.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promocije" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Circle fill="#ee1102" layoutX="810.0" layoutY="14.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
