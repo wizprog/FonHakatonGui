@@ -25,17 +25,14 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="15.0" layoutY="283.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promocije" textFill="WHITE">
+            <Button layoutX="15.0" layoutY="283.0" mnemonicParsing="false" onAction="#sceneActionPromotions" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promocije" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
+            <Circle fill="#ee1102" layoutX="23.0" layoutY="553.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" />
          </children>
       </Pane>
-      <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Circle fill="#ee1102" layoutX="810.0" layoutY="14.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" />
-         </children>
-      </Pane>
+      <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

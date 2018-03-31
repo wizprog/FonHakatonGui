@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javafx.animation.FadeTransition;
+import javafx.animation.RotateTransition;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +32,11 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	
 	@FXML
 	private Button homeBtn;
+	@FXML
+	private ImageView img1;
+	
+	private RotateTransition rotateTransition1;
+	public Boolean ready = false;
 	
 	@Override
 	public void handle(ActionEvent arg0) {
@@ -60,8 +67,20 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	
 	// sledeci kod se ponavlja za svaku scenu ponaosob, na osnovu button-a
 	@FXML
-	public void sceneActionHome(ActionEvent event) throws IOException {
+	private void sceneActionHome(ActionEvent event) throws IOException {
 		this.createPage(homePane, "/application/home.fxml"); // samo se stavi naziv scena
+	}
+	
+	/**
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML
+	private void sceneActionPromotions(ActionEvent event) throws IOException{
+		this.createPage(homePane, "/application/loading.fxml");
+		// salje se serveru poruka
+		while(!ready);
+		this.createPage(homePane, "/application/promotions.fxml");
 	}
 	
 
