@@ -80,15 +80,15 @@ public class Controller implements EventHandler<ActionEvent> {
 
 		img1.setImage(new Image("picture/syn.png"));
 		txt1.setText("Checking username");
-		rotateTransition1 = new RotateTransition(Duration.seconds(2), img1);
-		rotateTransition2 = new RotateTransition(Duration.seconds(2), img2);
-		rotateTransition3 = new RotateTransition(Duration.seconds(2), img3);
+		rotateTransition1 = new RotateTransition(Duration.seconds(0.1), img1);
+		rotateTransition2 = new RotateTransition(Duration.seconds(0.1), img2);
+		rotateTransition3 = new RotateTransition(Duration.seconds(0.1), img3);
 		RotateTransition transition[] = { rotateTransition1, rotateTransition2, rotateTransition3 };
 		for (RotateTransition rTransition : transition) {
 			rTransition.setCycleCount(1);
 			rTransition.setAutoReverse(false);
-			rTransition.setFromAngle(720);
-			rTransition.setToAngle(0);
+			rTransition.setFromAngle(0);
+			rTransition.setToAngle(720);
 		}
 		rotateTransition1.play();
 		rotateTransition1.setOnFinished((e) -> {

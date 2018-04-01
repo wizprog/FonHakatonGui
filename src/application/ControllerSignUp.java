@@ -122,8 +122,8 @@ public class ControllerSignUp implements Initializable {
 		for (RotateTransition rTransition : transition) {
 			rTransition.setCycleCount(1);
 			rTransition.setAutoReverse(false);
-			rTransition.setFromAngle(720);
-			rTransition.setToAngle(0);
+			rTransition.setFromAngle(0);
+			rTransition.setToAngle(720);
 		}
 		rotateTransition1.play();
 		rotateTransition1.setOnFinished((e) -> {
