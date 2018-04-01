@@ -36,19 +36,6 @@
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
-               <graphic>
-                  <Label fx:id="time" prefHeight="9.0" prefWidth="50.0" textFill="WHITE">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets bottom="15.0" left="15.0" right="35.0" />
-                     </padding>
-                     <font>
-                        <Font size="5.0" />
-                     </font>
-                  </Label>
-               </graphic>
             </Button>
              <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="343.0" mnemonicParsing="false" onAction="#sceneActionGo" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="mtsExplore" textFill="WHITE">
                <font>
@@ -62,7 +49,7 @@
             </ImageView>
             <Label fx:id="label" alignment="CENTER" focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="17.0" prefWidth="16.0" styleClass="roundlabel" stylesheets="@page.css" text="1" textFill="WHITE" />
             <Label fx:id="close" layoutX="11.0" layoutY="558.0" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" text="Close" textFill="WHITE" />
-            <Polygon fx:id="pol" fill="#59595900" layoutX="75.0" layoutY="79.0" stroke="#59595900" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0">
+            <Polygon fx:id="pol" fill="#59595900" focusTraversable="true" layoutX="75.0" layoutY="79.0" stroke="#59595900" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0">
               <points>
                 <Double fx:value="-50.0" />
                 <Double fx:value="-50.0" />
@@ -76,6 +63,14 @@
                 <Double fx:value="-10.0" />
               </points>
             </Polygon>
+            <Label fx:id="time" layoutX="70.0" layoutY="90.0" prefHeight="9.0" prefWidth="50.0" textFill="WHITE" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
             <Button fx:id="acc" layoutX="7.0" layoutY="9.0" mnemonicParsing="false" onAction="#notifyMe" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: transparent;" textFill="TRANSPARENT" />
          </children>
       </Pane>

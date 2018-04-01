@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -43,6 +44,9 @@ import javafx.util.Duration;
 import java.net.URL;
 
 public class FXMLSignInController implements EventHandler<ActionEvent> {
+
+	public long tm = System.currentTimeMillis();
+	public long tmCur;
 
 	@FXML
 	private Pane pane;
@@ -70,16 +74,31 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private Label lbl3;
 	@FXML
-	private Button hand;
+	private ImageView hand;
 	@FXML
 	private ImageView cir;
 	@FXML
 	private Polygon pol;
 	@FXML
 	private Button acc;
+	@FXML
+	private TextField code;
 
 	public Boolean ready = false;
-	int i = 0;
+	int i = 0, j = 0;
+	
+	@FXML
+	private Label plab1;
+	@FXML
+	private Label plab2;
+	@FXML
+	private Label plab3;
+	@FXML
+	private Label plab12;
+	@FXML
+	private Label plab22;
+	@FXML
+	private Label plab32;
 
 	@Override
 	public void handle(ActionEvent arg0) {
@@ -157,23 +176,31 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 
 	@FXML
 	private void move(ActionEvent event) {
-		TranslateTransition t = new TranslateTransition(Duration.seconds(3), cir);
-		t.setFromX(0);
-		t.setToX(-150);
-		t.setFromY(0);
-		t.setToY(15);
-		t.setAutoReverse(false);
-		t.setCycleCount(1);/*
-							 * KeyValue k1 = new KeyValue(cir.translateXProperty(), 0.0); KeyValue k2 = new
-							 * KeyValue(cir.translateXProperty(), -150.0, Interpolator.EASE_BOTH); KeyValue
-							 * k3 = new KeyValue(cir.translateYProperty(), 0.0); KeyValue k4 = new
-							 * KeyValue(cir.translateYProperty(), 15.0, Interpolator.EASE_BOTH);
-							 * 
-							 * KeyFrame kf1 = new KeyFrame(Duration.ZERO, k1, k3); KeyFrame kf2 = new
-							 * KeyFrame(Duration.seconds(3), k2, k4);
-							 * 
-							 * Timeline t = new Timeline(kf1, kf2);
-							 */
+		/*
+		 * TranslateTransition t = new TranslateTransition(Duration.seconds(3), cir);
+		 * t.setFromX(0); t.setToX(-150); t.setFromY(0); t.setToY(15);
+		 * t.setAutoReverse(false); t.setCycleCount(1);/* KeyValue k1 = new
+		 * KeyValue(cir.translateXProperty(), 0.0); KeyValue k2 = new
+		 * KeyValue(cir.translateXProperty(), -150.0, Interpolator.EASE_BOTH); KeyValue
+		 * k3 = new KeyValue(cir.translateYProperty(), 0.0); KeyValue k4 = new
+		 * KeyValue(cir.translateYProperty(), 15.0, Interpolator.EASE_BOTH);
+		 * 
+		 * KeyFrame kf1 = new KeyFrame(Duration.ZERO, k1, k3); KeyFrame kf2 = new
+		 * KeyFrame(Duration.seconds(3), k2, k4);
+		 * 
+		 * Timeline t = new Timeline(kf1, kf2);
+		 */
+		/////////////////////////////////////////////////////////////////////// 666,211,636,161,474,181,509,130
+		PathTransition t = null;
+		if (j++ == 0) {
+			t = new PathTransition(Duration.seconds(5), new Polyline(0, 0, -30, -47, -184, -33, -155, -78), cir);
+		} else {
+			////////////////////////////////// 510, 132, 474,181,466,229,497,290,538, 275
+			cir.setLayoutX(510);
+			cir.setLayoutY(132);
+			t = new PathTransition(Duration.seconds(5),
+					new Polyline(0, 0, -36, 49, -44, 97, -13, 158, 28, 143, 43, 172), cir);
+		}
 		t.play();
 	}
 
@@ -215,15 +242,20 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 
 	@FXML
 	public void notifyMe(ActionEvent event) {
+		tmCur = System.currentTimeMillis();
+		time.setText(String.valueOf(((tmCur - tm) / 1000)));
 		if (i++ % 2 == 0) {
+			pol.setVisible(true);
+			time.setVisible(true);
 			label.setText("");
 			label.setStyle("-fx-background-color: transparent");
 			pol.setFill(Color.color(0.357, 0.357, 0.357));
 			pol.setStroke(Color.color(0.357, 0.357, 0.357));
 		} else {
+			pol.setVisible(false);
+			time.setVisible(false);
 			pol.setFill(Color.color(0.357, 0.357, 0.357, 0));
 			pol.setStroke(Color.color(0.357, 0.357, 0.357, 0));
-			i++;
 		}
 	}
 

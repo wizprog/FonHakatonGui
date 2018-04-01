@@ -27,11 +27,11 @@
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutY="151.0" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" AnchorPane.topAnchor="150.0">
+      <Label alignment="CENTER" layoutY="151.0" opacity="0.8" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" text="Mix M" AnchorPane.topAnchor="150.0">
          <font>
-            <Font name="SansSerif Regular" size="20.0" />
+            <Font name="SansSerif Regular" size="28.0" />
          </font></Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="151.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" AnchorPane.topAnchor="150.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="151.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" text="839 din." AnchorPane.topAnchor="150.0">
          <font>
             <Font size="32.0" />
          </font></Label>
@@ -50,12 +50,12 @@
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutY="240.0" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" AnchorPane.topAnchor="240.0">
+      <Label alignment="CENTER" layoutY="240.0" opacity="0.8" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" text="Mix L" AnchorPane.topAnchor="240.0">
          <font>
-            <Font name="SansSerif Regular" size="20.0" />
+            <Font name="SansSerif Regular" size="28.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="240.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" AnchorPane.topAnchor="240.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="240.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" text="1019 din." AnchorPane.topAnchor="240.0">
          <font>
             <Font size="32.0" />
          </font>
@@ -75,12 +75,12 @@
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutY="324.0" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" AnchorPane.topAnchor="330.0">
+      <Label alignment="CENTER" layoutY="324.0" opacity="0.8" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" text="Mix XL" AnchorPane.topAnchor="330.0">
          <font>
-            <Font name="SansSerif Regular" size="20.0" />
+            <Font name="SansSerif Regular" size="28.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="324.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" AnchorPane.topAnchor="330.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="324.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" text="1199 din." AnchorPane.topAnchor="330.0">
          <font>
             <Font size="32.0" />
          </font>
@@ -100,12 +100,12 @@
             <Font name="SansSerif Regular" size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutY="413.0" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" AnchorPane.topAnchor="420.0">
+      <Label alignment="CENTER" layoutY="413.0" opacity="0.8" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #ffffff;" text="Mix XXL" AnchorPane.topAnchor="420.0">
          <font>
-            <Font name="SansSerif Regular" size="20.0" />
+            <Font name="SansSerif Regular" size="28.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="413.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" AnchorPane.topAnchor="420.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="413.0" prefHeight="70.0" prefWidth="142.0" style="-fx-background-color: #878686;" text="2159 din." AnchorPane.topAnchor="420.0">
          <font>
             <Font size="32.0" />
          </font>

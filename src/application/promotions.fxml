@@ -22,7 +22,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Label fx:id="plab1" text="babic gej" alignment="CENTER" layoutY="133.0" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #f44444;" textFill="WHITE">
+      <Label fx:id="plab1" alignment="CENTER" layoutY="133.0" prefHeight="70.0" prefWidth="397.0" style="-fx-background-color: #f44444;" textFill="WHITE">
          <font>
             <Font name="SansSerif Regular" size="30.0" />
          </font>
