@@ -25,7 +25,7 @@ public class Server {
 			while (true) {
 				while(pointer.isGoodToGo()==false){
 					try {
-						Thread.sleep(30000);
+						Thread.sleep(60000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

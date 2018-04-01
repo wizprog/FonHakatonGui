@@ -3,8 +3,11 @@ package application;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -43,6 +46,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import java.net.Socket;
 import java.net.URL;
+import java.util.*;
 
 public class FXMLSignInController implements EventHandler<ActionEvent> {
 
@@ -77,6 +81,14 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private ImageView cir;
 	
+	
+	@FXML
+	private Label plab1;
+	@FXML
+	private Label plab2;
+	@FXML
+	private Label plab3;
+	
 	public Boolean ready = false;
 	int i = 0;
 
@@ -84,7 +96,24 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 
 	}
+	
+	/*@FXML
+	public void initialize() {
 
+	    Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {            
+	        Calendar cal = Calendar.getInstance();
+	        int second = cal.get(Calendar.SECOND);
+	        int minute = cal.get(Calendar.MINUTE);
+	        int hour = cal.get(Calendar.HOUR);
+	        //System.out.println(hour + ":" + (minute) + ":" + second);
+	        lbl1.setText(hour + ":" + (minute) + ":" + second);
+	    }),
+	         new KeyFrame(Duration.seconds(1))
+	    );
+	    clock.setCycleCount(Animation.INDEFINITE);
+	    clock.play();
+	}  */
+	
 	@FXML
 	private void handleClose(MouseEvent event) {
 		System.exit(0);
@@ -136,29 +165,24 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private void sceneActionPromotions(ActionEvent event) throws IOException {
 	    boolean loading = true;
+	    this.createPage(homePane, "/application/loading.fxml");
+
 		Platform.runLater(new Runnable() {
+			
             @Override public void run() {
             	//this.createPage(homePane, "/application/loading.fxml");
-            	try {
-					homePane = FXMLLoader.load(getClass().getResource("/application/loading.fxml"));
+           // 	try {
+				/*	homePane = FXMLLoader.load(getClass().getResource("/application/loading.fxml"));
 					pane.getChildren().clear();
-					pane.getChildren().add((Node) homePane);
-					
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-				
-					
-
-				} catch (IOException e) {
+					pane.getChildren().add((Node) homePane);	
+					pane.setDisable(true);*/
+            		lbl1.setText(String.valueOf( System.nanoTime()));
+            		
+			/*	} catch (IOException e) {
 					e.printStackTrace();
-				}
+				}*/
             }
-        });
+        });  
 		try (Socket socket = new Socket("localhost", 4002);
 				ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 				ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());) {	
@@ -167,14 +191,77 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 			int array[]=new int[6];
 			for(int i=0;i<6;i++) {
 				array[i]=(int)in.readObject();
-				System.out.println(array[i]);
+				System.out.println(array[i]);   // 3 call  4 sms  5 internet 
 			}
+			
+			int sorted[] = new int[3];
+			int pom;
+			
+			HashMap<String, Integer> map = new HashMap<String,Integer>();
+			map.put("1", array[3]);
+			map.put("2", array[4]);
+			map.put("3", array[5]);
+			
+			
+			int data[] = new int[3];
+			int dataIndex[] = new int[3];
+			
+			data[0] = array[3];
+			data[1] = array[4];
+			data[2] = array[5];
+			
+			dataIndex[0] = 1;
+			dataIndex[1] = 2;
+			dataIndex[2] = 3;
+			
+			int pom1, pom2 ;
+			
+			for (int i=0; i<3 ; i++) 
+				for (int j=i; j<3 ; j++) {
+					if (data[i]>data[j]) {
+						pom1 = data[i];
+						data[i] = data[j];
+						data[j] = pom1;
+						
+						pom2 = dataIndex[i];
+						dataIndex[i] = dataIndex[j];
+						dataIndex[j] = pom2;
+					}
+				}
+			String bonus = "";
+			String bonus1 = "";
+			
+			switch( dataIndex[2]) {
+			case 1: bonus += " CALL BONUS";
+				break;
+			case 2: bonus += " SMS BONUS";
+				break;
+			case 3: bonus += " INTERNET BONUS";				
+			}
+			
+		//	plab1.setText(bonus);
+			
+			switch( dataIndex[1]) {
+			case 1: bonus1 += " CALL BONUS";
+				break;
+			case 2: bonus1 += " SMS BONUS";
+				break;
+			case 3: bonus1 += " INTERNET BONUS";				
+			}
+			
+		//	plab2.setText(bonus1);
+			
+		//	plab3.setText(bonus + bonus1);
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+		
+		
 		loading = false;
 		this.createPage(homePane, "/application/promotions.fxml");
+
 		
 		
 	}
