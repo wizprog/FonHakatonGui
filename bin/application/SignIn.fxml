@@ -19,17 +19,17 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online plaćanje" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online paymant" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Popularni paketi" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="223.0" mnemonicParsing="false" onAction="#sceneActionPacket" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Popular packets" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="283.0" mnemonicParsing="false" onAction="#sceneActionPromotions" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promocije" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="283.0" mnemonicParsing="false" onAction="#sceneActionPromotions" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Promotions" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -50,7 +50,7 @@
       </Pane>
       <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="109.0" layoutY="87.0" text="Dobrodošli">
+            <Label layoutX="109.0" layoutY="87.0" text="Welcome">
                <font>
                   <Font name="SansSerif Bold" size="51.0" />
                </font>

@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="580.0" prefWidth="824.0" style="-fx-background-color: #351c23;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="109.0" layoutY="87.0" text="Dobrodošli">
+      <Label layoutX="109.0" layoutY="87.0" text="Welcome">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.21904761904761905" startY="0.5285714285714286">
                <stops>
