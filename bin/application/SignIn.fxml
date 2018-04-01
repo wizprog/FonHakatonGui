@@ -63,12 +63,12 @@
                 <Double fx:value="-10.0" />
               </points>
             </Polygon>
-            <Label fx:id="time" layoutX="62.0" layoutY="78.0" prefHeight="9.0" prefWidth="50.0" textFill="WHITE" visible="false">
+            <Label fx:id="time" layoutX="70.0" layoutY="90.0" prefHeight="9.0" prefWidth="50.0" textFill="WHITE" visible="false">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font size="16.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             <Button fx:id="acc" layoutX="7.0" layoutY="9.0" mnemonicParsing="false" onAction="#notifyMe" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: transparent;" textFill="TRANSPARENT" />
