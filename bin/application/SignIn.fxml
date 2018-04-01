@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.Double?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="580.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLSignInController">
@@ -20,7 +22,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online paymant" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online payment" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -35,7 +37,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
                <graphic>
-                  <Label prefHeight="9.0" prefWidth="50.0" textFill="WHITE">
+                  <Label fx:id="time" prefHeight="9.0" prefWidth="50.0" textFill="WHITE">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -60,6 +62,21 @@
             </ImageView>
             <Label fx:id="label" alignment="CENTER" focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="17.0" prefWidth="16.0" styleClass="roundlabel" stylesheets="@page.css" text="1" textFill="WHITE" />
             <Label fx:id="close" layoutX="11.0" layoutY="558.0" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" text="Close" textFill="WHITE" />
+            <Polygon fx:id="pol" fill="#59595900" layoutX="75.0" layoutY="79.0" stroke="#59595900" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0">
+              <points>
+                <Double fx:value="-50.0" />
+                <Double fx:value="-50.0" />
+                <Double fx:value="-50.0" />
+                <Double fx:value="200.0" />
+                <Double fx:value="100.0" />
+                <Double fx:value="200.0" />
+                <Double fx:value="100.0" />
+                <Double fx:value="-10.0" />
+                <Double fx:value="-30.0" />
+                <Double fx:value="-10.0" />
+              </points>
+            </Polygon>
+            <Button fx:id="acc" layoutX="7.0" layoutY="9.0" mnemonicParsing="false" onAction="#notifyMe" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: transparent;" textFill="TRANSPARENT" />
          </children>
       </Pane>
       <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

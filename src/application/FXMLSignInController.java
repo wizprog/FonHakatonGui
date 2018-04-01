@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -30,6 +31,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Translate;
@@ -51,8 +53,7 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private Label close;
 	@FXML
-	private Label time;
-
+	public Label time;
 
 	private AnchorPane homePane;
 
@@ -72,7 +73,11 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	private Button hand;
 	@FXML
 	private ImageView cir;
-	
+	@FXML
+	private Polygon pol;
+	@FXML
+	private Button acc;
+
 	public Boolean ready = false;
 	int i = 0;
 
@@ -138,9 +143,9 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	private void sceneActionGo(ActionEvent event) throws IOException {
 
 		this.createPage(homePane, "/application/go.fxml");
-		
+
 	}
-	
+
 	@FXML
 	private void rotateMe(ActionEvent event) {
 		RotateTransition rt = new RotateTransition(Duration.millis(10), hand);
@@ -153,20 +158,22 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private void move(ActionEvent event) {
 		TranslateTransition t = new TranslateTransition(Duration.seconds(3), cir);
-		t.setFromX(0); t.setToX(-150);
-		t.setFromY(0); t.setToY(15);
+		t.setFromX(0);
+		t.setToX(-150);
+		t.setFromY(0);
+		t.setToY(15);
 		t.setAutoReverse(false);
 		t.setCycleCount(1);/*
-		KeyValue k1 = new KeyValue(cir.translateXProperty(), 0.0);
-		KeyValue k2 = new KeyValue(cir.translateXProperty(), -150.0, Interpolator.EASE_BOTH);
-		KeyValue k3 = new KeyValue(cir.translateYProperty(), 0.0);
-		KeyValue k4 = new KeyValue(cir.translateYProperty(), 15.0, Interpolator.EASE_BOTH);
-		
-		KeyFrame kf1 = new KeyFrame(Duration.ZERO, k1, k3);
-		KeyFrame kf2 = new KeyFrame(Duration.seconds(3), k2, k4);
-		
-		Timeline t = new Timeline(kf1, kf2);
-		*/
+							 * KeyValue k1 = new KeyValue(cir.translateXProperty(), 0.0); KeyValue k2 = new
+							 * KeyValue(cir.translateXProperty(), -150.0, Interpolator.EASE_BOTH); KeyValue
+							 * k3 = new KeyValue(cir.translateYProperty(), 0.0); KeyValue k4 = new
+							 * KeyValue(cir.translateYProperty(), 15.0, Interpolator.EASE_BOTH);
+							 * 
+							 * KeyFrame kf1 = new KeyFrame(Duration.ZERO, k1, k3); KeyFrame kf2 = new
+							 * KeyFrame(Duration.seconds(3), k2, k4);
+							 * 
+							 * Timeline t = new Timeline(kf1, kf2);
+							 */
 		t.play();
 	}
 
@@ -186,6 +193,38 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	public void onMouseExited(MouseEvent event) {
 		close.setTextFill(Color.color(0.565, 0.565, 0.565));
+	}
+
+	AnimationTimer timer = new AnimationTimer() {
+
+		private long startTime;
+
+		@Override
+		public void start() {
+			startTime = System.currentTimeMillis();
+			super.start();
+		}
+
+		@Override
+		public void handle(long timestamp) {
+			long now = System.currentTimeMillis();
+			double t = (now - startTime) / 1000.0;
+			time.setText(String.valueOf(t));
+		}
+	};
+
+	@FXML
+	public void notifyMe(ActionEvent event) {
+		if (i++ % 2 == 0) {
+			label.setText("");
+			label.setStyle("-fx-background-color: transparent");
+			pol.setFill(Color.color(0.357, 0.357, 0.357));
+			pol.setStroke(Color.color(0.357, 0.357, 0.357));
+		} else {
+			pol.setFill(Color.color(0.357, 0.357, 0.357, 0));
+			pol.setStroke(Color.color(0.357, 0.357, 0.357, 0));
+			i++;
+		}
 	}
 
 }
