@@ -50,6 +50,12 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	private Button homeBtn;
 	@FXML
 	private ImageView img1;
+	@FXML
+	private Label lbl1;
+	@FXML
+	private Label lbl2;
+	@FXML
+	private Label lbl3;
 
 	private RotateTransition rotateTransition1;
 	public Boolean ready = false;
@@ -104,11 +110,13 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	}
 
 	@FXML
-	private void sceneActionPromotions(ActionEvent event) throws IOException {
-		this.createPage(homePane, "/application/loading.fxml");
-		// salje se serveru poruka
+	private void sceneActionPacket(ActionEvent event) throws IOException {
+		this.createPage(homePane, "/application/packet.fxml");
+	}
 
-		// this.createPage(homePane, "/application/promotions.fxml");
+	@FXML
+	private void sceneActionPromotions(ActionEvent event) throws IOException {
+		this.createPage(homePane, "/application/promotions.fxml");
 	}
 
 	@FXML

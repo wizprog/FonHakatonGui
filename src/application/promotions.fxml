@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="580.0" prefWidth="824.0" style="-fx-background-color: #2d0000;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
-	
+
+<AnchorPane prefHeight="580.0" prefWidth="824.0" style="-fx-background-color: #2d0000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lbl1" alignment="CENTER" layoutX="549.0" layoutY="164.0" prefHeight="36.0" prefWidth="140.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl2" alignment="CENTER" layoutX="549.0" layoutY="229.0" prefHeight="36.0" prefWidth="140.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl3" alignment="CENTER" layoutX="549.0" layoutY="298.0" prefHeight="36.0" prefWidth="140.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="25.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
-

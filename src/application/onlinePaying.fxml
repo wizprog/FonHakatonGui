@@ -38,7 +38,7 @@
                   <Font size="20.0" />
                </font>
             </TextField>
-            <TextField alignment="CENTER" focusTraversable="false" layoutX="165.0" layoutY="378.0" prefHeight="48.0" prefWidth="170.0" promptText="Iznos" styleClass="textfield" stylesheets="@pay.css">
+            <TextField alignment="CENTER" focusTraversable="false" layoutX="165.0" layoutY="378.0" prefHeight="48.0" prefWidth="170.0" promptText="\$$$" styleClass="textfield" stylesheets="@pay.css" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="165.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -46,32 +46,32 @@
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <Label layoutX="245.0" layoutY="295.0" text="/">
+            <Label layoutX="245.0" layoutY="295.0" text="/" textFill="WHITE" AnchorPane.leftAnchor="244.5" AnchorPane.rightAnchor="244.5">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <Button layoutX="93.0" layoutY="464.0" mnemonicParsing="false" opacity="0.8" prefHeight="61.0" prefWidth="315.0" style="-fx-background-color: #1b477c;" stylesheets="@pay.css" text="Pay now" textFill="WHITE">
+            <Button layoutX="93.0" layoutY="464.0" mnemonicParsing="false" opacity="0.8" prefHeight="61.0" prefWidth="315.0" style="-fx-background-color: #1b477c;" stylesheets="@pay.css" text="Pay now" textFill="WHITE" AnchorPane.leftAnchor="92.5" AnchorPane.rightAnchor="92.5">
                <font>
                   <Font name="SansSerif Regular" size="29.0" />
                </font>
             </Button>
-            <Label layoutX="75.0" layoutY="53.0" text="Ime sa kartice" textFill="WHITE">
+            <Label layoutX="75.0" layoutY="53.0" text="Card name" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="328.0" layoutY="53.0" text="Šifra" textFill="WHITE">
+            <Label layoutX="328.0" layoutY="53.0" text="Password" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="183.0" layoutY="153.0" text="Broj kartice" textFill="WHITE">
+            <Label layoutX="163.0" layoutY="153.0" text="Card number" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="174.0" layoutY="254.0" text="Datum isteka" textFill="WHITE">
+            <Label layoutX="158.0" layoutY="253.0" text="Expiration number" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
@@ -103,7 +103,7 @@
             <Image url="@../picture/pp.png" />
          </image>
       </ImageView>
-      <Label layoutX="82.0" layoutY="405.0" text="Kako želite da platite?" textFill="#363030">
+      <Label layoutX="66.0" layoutY="402.0" text="How do you want to pay?" textFill="#363030">
          <font>
             <Font name="SansSerif Regular" size="22.0" />
          </font>
