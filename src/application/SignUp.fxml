@@ -117,6 +117,6 @@
       <Text fx:id="txt4" fill="WHITE" layoutX="510.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="130.0" />
       <Text fx:id="txt5" fill="WHITE" layoutX="660.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="2.0" textAlignment="CENTER" wrappingWidth="130.0" />
       <Label fx:id="label" focusTraversable="false" layoutX="372.0" layoutY="560.0" text="&#9;  Congratulations&#10;You've successfully registered" textFill="WHITE" visible="false" />
-      <Label fx:id="close" layoutX="25.0" layoutY="563.0" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" stylesheets="@application.css" text="Close" textFill="#909090" />
+      <Label fx:id="close" layoutX="25.0" layoutY="563.0" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" stylesheets="@application.css" text="Back" textFill="#909090" />
    </children>
 </AnchorPane>

@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
@@ -10,6 +13,16 @@
 <AnchorPane prefHeight="580.0" prefWidth="824.0" style="-fx-background-color: #4a8ad6;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="application.FXMLSignInController">
    <children>
       <WebView fx:id="browser" prefHeight="500.0" prefWidth="824.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="80.0" layoutY="500.0" stroke="TRANSPARENT" strokeType="INSIDE" width="824.0">
+         <fill>
+            <LinearGradient endX="0.8857142857142857" endY="0.8238095238095238" startY="0.3142857142857143">
+               <stops>
+                  <Stop color="RED" />
+                  <Stop color="#f8cfcf" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
       <Label layoutX="316.0" layoutY="521.0" text="Code" textFill="WHITE">
          <font>
             <Font size="30.0" />

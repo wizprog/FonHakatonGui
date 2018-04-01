@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="580.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLSignInController">
@@ -20,7 +19,7 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online placanje" textFill="WHITE">
+            <Button alignment="CENTER_RIGHT" layoutX="15.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneActionPay" prefHeight="40.0" prefWidth="170.0" stylesheets="@page.css" text="Online plaćanje" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
@@ -40,13 +39,13 @@
                   <Font name="SansSerif Regular" size="18.0" />
                </font>
             </Button>
-            <Circle fill="#ee1102" layoutX="23.0" layoutY="553.0" onMouseClicked="#handleClose" radius="8.0" stroke="#2c1e1e" strokeType="INSIDE" />
             <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../picture/not.png" />
                </image>
             </ImageView>
-            <Label fx:id="label" alignment="CENTER" focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="17.0" prefWidth="16.0" styleClass="roundlabel" stylesheets="@page.css" textFill="WHITE" />
+            <Label fx:id="label" alignment="CENTER" focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="17.0" prefWidth="16.0" styleClass="roundlabel" stylesheets="@page.css" text="1" textFill="WHITE" />
+            <Label fx:id="close" layoutX="11.0" layoutY="558.0" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" text="Close" textFill="WHITE" />
          </children>
       </Pane>
       <Pane fx:id="pane" layoutX="401.0" layoutY="157.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #351c23;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

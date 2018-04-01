@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -8,7 +9,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2d0000;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
 	<children>
@@ -38,5 +41,31 @@
 		<Label layoutX="154.0" layoutY="233.0" text="Register free and try various opportunities &#10;               our app is giving to you&#10;" textFill="#b5b5b5" />
 		<Button layoutX="190.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonActionLogUp" opacity="0.8" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #b21111;" text="Sign Up" textFill="#b5b5b5" />
 		<Label fx:id="label" layoutX="25.0" layoutY="463.0" onMouseClicked="#handleClose" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" stylesheets="@application.css" text="Close" textFill="#909090" />
+      <HBox layoutX="123.0" layoutY="75.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="img1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lbl1" minWidth="70.0" prefHeight="5.0" prefWidth="70.0">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fx:id="img2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lbl2" minWidth="70.0" prefHeight="5.0" prefWidth="70.0">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fx:id="img3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <Text fx:id="txt1" fill="WHITE" layoutX="115.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="70.0" />
+      <Text fx:id="txt2" fill="WHITE" layoutX="235.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="70.0" />
+      <Text fx:id="txt3" fill="WHITE" layoutX="355.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="70.0" />
 	</children>
 </AnchorPane>
