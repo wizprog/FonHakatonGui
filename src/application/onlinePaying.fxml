@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="580.0" prefWidth="824.0" style="-fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="580.0" prefWidth="824.0" style="-fx-background-color: #ffffff" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLSignInController">
    <children>
       <AnchorPane layoutX="377.0" opacity="0.8" prefHeight="580.0" prefWidth="500.0" style="-fx-background-color: #7c0d1d;">
          <children>
@@ -51,7 +51,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <Button layoutX="93.0" layoutY="464.0" mnemonicParsing="false" opacity="0.8" prefHeight="61.0" prefWidth="315.0" style="-fx-background-color: #1b477c;" stylesheets="@pay.css" text="Pay now" textFill="WHITE" AnchorPane.leftAnchor="92.5" AnchorPane.rightAnchor="92.5">
+            <Button layoutX="93.0" layoutY="464.0" mnemonicParsing="false" onAction="#rotateMe" opacity="0.8" prefHeight="61.0" prefWidth="315.0" style="-fx-background-color: #1b477c;" stylesheets="@pay.css" text="Pay now" textFill="WHITE" AnchorPane.leftAnchor="92.5" AnchorPane.rightAnchor="92.5">
                <font>
                   <Font name="SansSerif Regular" size="29.0" />
                </font>
@@ -78,7 +78,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="260.0" fitWidth="320.0" layoutX="60.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="hand" fitHeight="260.0" fitWidth="320.0" layoutX="60.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../picture/tr.png" />
          </image>

@@ -5,7 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.PathTransition;
 import javafx.animation.RotateTransition;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +28,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.transform.Translate;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -41,8 +50,9 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	private WebView browser;
 	@FXML
 	private Label close;
+	@FXML
+	private Label time;
 
-	MyBrowser myBrowser;
 
 	private AnchorPane homePane;
 
@@ -51,13 +61,18 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private ImageView img1;
 	@FXML
+	private ImageView img;
+	@FXML
 	private Label lbl1;
 	@FXML
 	private Label lbl2;
 	@FXML
 	private Label lbl3;
-
-	private RotateTransition rotateTransition1;
+	@FXML
+	private Button hand;
+	@FXML
+	private ImageView cir;
+	
 	public Boolean ready = false;
 	int i = 0;
 
@@ -122,14 +137,37 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	@FXML
 	private void sceneActionGo(ActionEvent event) throws IOException {
 
-		myBrowser = new MyBrowser();
-		browser = myBrowser.webView;
 		this.createPage(homePane, "/application/go.fxml");
-
+		
+	}
+	
+	@FXML
+	private void rotateMe(ActionEvent event) {
+		RotateTransition rt = new RotateTransition(Duration.millis(10), hand);
+		rt.setCycleCount(1);
+		rt.setFromAngle(0);
+		rt.setToAngle(180);
+		rt.play();
 	}
 
-	static {
-		System.setProperty("java.net.useSystemProxies", "true");
+	@FXML
+	private void move(ActionEvent event) {
+		TranslateTransition t = new TranslateTransition(Duration.seconds(3), cir);
+		t.setFromX(0); t.setToX(-150);
+		t.setFromY(0); t.setToY(15);
+		t.setAutoReverse(false);
+		t.setCycleCount(1);/*
+		KeyValue k1 = new KeyValue(cir.translateXProperty(), 0.0);
+		KeyValue k2 = new KeyValue(cir.translateXProperty(), -150.0, Interpolator.EASE_BOTH);
+		KeyValue k3 = new KeyValue(cir.translateYProperty(), 0.0);
+		KeyValue k4 = new KeyValue(cir.translateYProperty(), 15.0, Interpolator.EASE_BOTH);
+		
+		KeyFrame kf1 = new KeyFrame(Duration.ZERO, k1, k3);
+		KeyFrame kf2 = new KeyFrame(Duration.seconds(3), k2, k4);
+		
+		Timeline t = new Timeline(kf1, kf2);
+		*/
+		t.play();
 	}
 
 	// videcemo kako ce ovo da se salje
@@ -137,23 +175,6 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 	private void check() {
 		if (Integer.parseInt(label.getText()) > 0 && label.getText() != null) {
 			label.setVisible(true);
-		}
-	}
-
-	class MyBrowser extends Region {
-		HBox toolbar;
-
-		WebView webView = new WebView();
-		WebEngine webEngine = webView.getEngine();
-
-		public MyBrowser() {
-
-			final URL urlGoogleMaps = getClass().getResource("GoogleMapsV3.html");
-			webEngine.load(urlGoogleMaps.toExternalForm());
-			webEngine.setJavaScriptEnabled(true);
-
-			getChildren().add(webView);
-
 		}
 	}
 
