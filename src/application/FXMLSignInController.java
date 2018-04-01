@@ -134,18 +134,21 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 				}
             }
         });
-		int i = 0;
 		try (Socket socket = new Socket("localhost", 4002);
 				ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 				ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());) {	
 			out.writeObject("\"BS11490\"");
 			out.flush();
-			i=(int)in.readObject();
+			int array[]=new int[6];
+			for(int i=0;i<6;i++) {
+				array[i]=(int)in.readObject();
+				System.out.println(array[i]);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		this.createPage(homePane, "/application/promotions.fxml");
-		System.out.println("PUSI MI KURAC !!!!"+i);
+		
 	}
 
 	@FXML

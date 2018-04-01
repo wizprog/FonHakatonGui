@@ -16,7 +16,10 @@ public class Server {
 		int port = Integer.parseInt(args[0]);
 		Pointer pointer=new Pointer(false);
 		HashMap<String, int[]> hashmap = new HashMap<String, int[]>();
-		new Timer(pointer,hashmap).start();
+		int array[]=new int[3];
+		int oldArray[] = new int[3];
+	//	for (int i=0; i < oldArray.length;i++) oldArray[i] = 0;
+		new Timer(pointer,hashmap,array,oldArray).start();
 		try (ServerSocket serverSocket = new ServerSocket(port);) {
 			System.out.println("Server running on port " + port + "...");
 			while (true) {
@@ -30,7 +33,7 @@ public class Server {
 				System.out.println("Server running on port " + port + "...");
 				Socket socket = serverSocket.accept();
 				System.out.println("IP Address: " + socket.getInetAddress());
-				new WorkingThread(socket, hashmap).start();
+				new WorkingThread(socket, hashmap,array,oldArray).start();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
