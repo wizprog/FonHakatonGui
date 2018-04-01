@@ -1,11 +1,14 @@
 package application;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.concurrent.TimeUnit;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
+import javafx.application.Platform;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +32,8 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+
+import java.net.Socket;
 import java.net.URL;
 
 public class FXMLSignInController implements EventHandler<ActionEvent> {
@@ -105,10 +110,31 @@ public class FXMLSignInController implements EventHandler<ActionEvent> {
 
 	@FXML
 	private void sceneActionPromotions(ActionEvent event) throws IOException {
-		this.createPage(homePane, "/application/loading.fxml");
-		// salje se serveru poruka
+		Platform.runLater(new Runnable() {
+            @Override public void run() {
+            	//this.createPage(homePane, "/application/loading.fxml");
+            	try {
+					homePane = FXMLLoader.load(getClass().getResource("/application/loading.fxml"));
+					pane.getChildren().clear();
+					pane.getChildren().add((Node) homePane);
 
-		// this.createPage(homePane, "/application/promotions.fxml");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+            }
+        });
+		int i = 0;
+		try (Socket socket = new Socket("localhost", 4002);
+				ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+				ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());) {	
+			out.writeObject("\"BS11490\"");
+			out.flush();
+			i=(int)in.readObject();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		this.createPage(homePane, "/application/promotions.fxml");
+		System.out.println("PUSI MI KURAC !!!!"+i);
 	}
 
 	@FXML
